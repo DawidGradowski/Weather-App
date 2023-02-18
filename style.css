@@ -35,6 +35,8 @@ h1 {
     display: flex;
     align-items: center;
     border-radius: 30px;
+    margin-bottom: 30px;
+    /* display: none; */
 }
 
 .search input {
@@ -68,4 +70,92 @@ h1 {
 
 .search i {
     padding: 0.5em;
+}
+
+.weather {
+    width: 100%;
+    background-color: #060938;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "icon info";
+}
+
+.weather.minimalized {
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "info info";
+}
+
+.weather nav {
+    background-color: #1b1b2e;
+    padding: 15px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    grid-area: nav;
+}
+
+.nav-btn{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    background-color: #363663;
+    border: 5px solid transparent;
+    border-radius: 25%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: #22223a;
+    border: 2px solid #363663;
+}
+
+.weather h2 {
+    margin: 10px;
+    font-size: 2em;
+    text-align: center;
+    grid-area: header;
+}
+
+.weather .weather-icon {
+    width: 80%;
+    padding: 10%;
+    grid-area: icon;
+}
+
+.weather .weather-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather.minimalized .weather-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.weather-info h3{
+    font-size: 3em;
+}
+
+.weather-info p{
+    font-size: 2em;
+}
+
+.hidden {
+    display: none;
 }
