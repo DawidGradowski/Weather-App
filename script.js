@@ -54,17 +54,17 @@ minimalizeBtn.addEventListener("click", MinimalizePanel, false);
 searchBtn.addEventListener("click", () => {
     cityName = searchInput.value;
     
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName} &limit=${limit}&appid=${APIKey}`)
+    fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${cityName}`)
     .then((response) => response.json())
     .then(json => {
     
-    if (json[0] == undefined) {
+    if (json.results == undefined) {
         WrongInputAnimation()
         return;
     }
     
-    let lat = json[0].lat;
-    let lon = json[0].lon;
+    let lat = json.results[0].latitude;
+    let lon = json.results[0].longitude;
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`)
     .then((response) => response.json())
