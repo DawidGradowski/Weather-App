@@ -87,13 +87,6 @@ h1 {
     "icon info";
 }
 
-.weather.minimalized {
-    grid-template-areas:
-    "nav nav"
-    "header header"
-    "info info";
-}
-
 .weather nav {
     background-color: #1b1b2e;
     padding: 15px;
@@ -140,14 +133,6 @@ h1 {
     align-items: center;
 }
 
-.weather.minimalized .weather-info {
-    grid-area: info;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .weather-info h3{
     font-size: 3em;
 }
@@ -156,6 +141,64 @@ h1 {
     font-size: 2em;
 }
 
+.weather.minimalized {
+    grid-template-columns: 33% 67%;
+    grid-template-areas:
+    "nav nav"
+    "header info";
+    font-size: 0.75em;
+}
+
+.weather.minimalized .weather-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 .hidden {
     display: none;
+}
+
+@keyframes rotate {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.rotate-animation {
+    animation: rotate 1s ease;
+}
+
+@keyframes error {
+    0% {
+        transform: translateX(-10px);
+    }
+    20% {
+        transform: translateX(10px);
+    }
+    40% {
+        transform: translateX(-10px);
+    }
+    60% {
+        transform: translateX(10px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.error-animation {
+    animation: error 300ms linear;
 }

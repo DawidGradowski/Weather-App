@@ -11,30 +11,32 @@
 <body>
     <h1>Weather App</h1>
     <div class="container">
-        <section class="search">
-            <input type="text" class="city-input" placeholder="Enter city name...">
-            <button id="search-btn">
-                <i class="fa-solid fa-magnifying-glass-location"></i>
-            </button>
-        </section>
-        <section class="weather hidden">
-            <nav>
-                <button class="nav-btn" id="minimalize">
-                    <i class="fa-solid fa-window-minimize"></i>
+        <div class="animate-container">
+            <section class="search">
+                <input type="text" class="city-input" placeholder="Enter city name...">
+                <button id="search-btn">
+                    <i class="fa-solid fa-magnifying-glass-location"></i>
                 </button>
-                <button class="nav-btn" id="close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </nav>
-            <h2 class="city-name">Łódź, Poland</h2>
-            <img class="weather-icon" src="weather-icons/sun.png" alt="weather-icon">
-            <div class="weather-info">
-                <h3 class="temperature-text">33°C</h3>
-                <p class="weather-text">
-                    Sunny
-                </p>
-            </div>
-        </section>
+            </section>
+            <section class="weather hidden">
+                <nav>
+                    <button class="nav-btn" id="minimalize">
+                        <i class="fa-solid fa-window-minimize"></i>
+                    </button>
+                    <button class="nav-btn" id="close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </nav>
+                <h2 class="city-text">Łódź</h2>
+                <img class="weather-icon" src="weather-icons/sun.png" alt="weather-icon">
+                <div class="weather-info">
+                    <h3 class="temperature-text">33°C</h3>
+                    <p class="weather-text">
+                        Sunny
+                    </p>
+                </div>
+            </section>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
