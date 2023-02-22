@@ -54,7 +54,7 @@ minimalizeBtn.addEventListener("click", MinimalizePanel, false);
 searchBtn.addEventListener("click", () => {
     cityName = searchInput.value;
     
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName} &limit=${limit}&appid=${APIKey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName} &limit=${limit}&appid=${APIKey}`)
     .then((response) => response.json())
     .then(json => {
     
